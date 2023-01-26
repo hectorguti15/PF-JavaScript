@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+
+    <!--Icon-->
+    <link href="https://css.gg/shopping-cart.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <!--Alerts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <title>Simulación compra</title>
+  </head>
+  <body id="body">
+    <header id="header">
+      <!--Imagen Logo-->
+      <div class="img-container">
+        <img class="img-item" src="./img/maktub.png" alt="Logo" />
+      </div>
+    </header>
+    <main id="main">
+      <div class="container-shopping-cart">
+        <div class="container-cart">
+          <div class="container-shopping-item">
+            <img class="shopping-item" src="./img/cart.png" alt="cart" />
+          </div>
+          <span id="quantity-products">0</span>
+        </div>
+      </div>
+
+      <!--container-cart-->
+      <div class="container-add-cart" style="display: none">
+        <h2 id="empty-cart">El carrito esta vacío</h2>
+        <div class="purchase">
+          <table class="table">
+            <thead class="thead">
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+          <div>
+            <h2 id="total">Total</h2>
+          </div>
+          <button id="btn-purchase">Comprar</button>
+        </div>
+      </div>
+
+      <!-- container-buy -->
+
+      <div id="container-buy">
+        <h2>Compra</h2>
+        <span class="close-buy material-symbols-outlined"> close </span>
+        <div class="product-buy">
+          <table class="product-buy">
+            <thead>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+            </thead>
+            <tbody id="tbody-2"></tbody>
+          </table>
+          <h2 id="total2">Total</h2>
+        </div>
+        <form class="container-form">
+          <div class="form-item">
+            <label for="">Nombres</label>
+            <input type="text" name="nombre" id="nombre" required />
+          </div>
+          <div class="form-item">
+            <label for="">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="nombre@ejemplo.com"
+              required
+            />
+          </div>
+
+          <button id="confirm">Confirmar compra</button>
+        </form>
+      </div>
+
+      <!-- completed purchase -->
+      <div class="completed-purchase">
+        <span id="name2">Nombre</span>
+        <span id="email2">Email</span>
+        <span id="total3">Total</span>
+        <span><strong>¡Gracias por su compra!</strong></span>
+        <button class="btn_close_buy">Cerrar</button>
+      </div>
+
+      <!--FETCH-->
+      <div class="fetch">
+        <h2>Tipo de cambio de dólar</h2>
+        <div class="info-dolar">
+          <select class="dolar-country">
+            <option value="">--Selecciona un País--</option>
+            <option value="pen">Perú</option>
+            <option value="ars">Argentina</option>
+            <option value="clp">Chile</option>
+            <option value="cop">Colombia</option>
+            <option value="bob">Bolivia</option>
+            <option value="brl">Brasil</option>
+            <option value="uyu">Uruguay</option>
+            <option value="ves">Venezuela</option>
+          </select>
+          <h4 class="date">Last Update</h4>
+          <h4 class="type">Moneda</h4>
+          <h4 class="rate">Valor</h4>
+        </div>
+      </div>
+
+    
+
+      <!--Carta-->
+      <div class="container-section">
+        <div class="section nuestras-jarras">
+          <h1 class="section-title">Nuestras Jarras</h1>
+          <p class="section-info">Todas de 1L, perfectas para compartir.</p>
+          <div class="container-items-info">
+            <div class="section-items sangria">
+              <h3>Sangría</h3>
+              <p>Clásica sangría con frutas</p>
+              <span>$10.00 </span>
+              <button class="add-cart">Añadir al carrito</button>
+            </div>
+            <div class="section-items sangripisco">
+              <h3>SangriPisco</h3>
+              <p>Con una dosis extra de pisco</p>
+              <span>$12.00</span>
+              <button class="add-cart">Añadir al carrito</button>
+            </div>
+            <div class="section-items cubalibre">
+              <h3>CubaLibre</h3>
+              <p>Ron, Coca-Cola y Limón</p>
+              <span>$10.00</span>
+              <button class="add-cart">Añadir al carrito</button>
+            </div>
+            <div class="section-items piscosour">
+              <h3>Pisco Sour</h3>
+              <p>Clásico, maracuyá, fresa, granadilla o coca.</p>
+              <span>$15.00</span>
+              <button class="add-cart">Añadir al carrito</button>
+            </div>
+            <div class="section-items perulibre">
+              <h3>Perú Libre</h3>
+              <p>Pisco, Coca-cola y limón</p>
+              <span>$10.00</span>
+              <button class="add-cart">Añadir al carrito</button>
+            </div>
+            <div class="section-items pilsen-cristal">
+              <h3>Pilsen/Cristal</h3>
+              <span>$10.00</span>
+              <button class="add-cart">Añadir al carrito</button>
+            </div>
+            <div class="section-items cusqueña">
+              <h3>Cusqueña Dorada</h3>
+              <span>$11.00</span>
+              <button class="add-cart">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="section botellasypacks">
+          <h1 class="section-title">Botellas & Packs</h1>
+          <div class="container-items-info">
+            <div class="b">
+              <div class="section-container-item vino">
+                <h2>Vino</h2>
+                <p>Servicio de corcho incluido</p>
+                <div class="a">
+                  <div class="section-items santiagoqueirolo">
+                    <h3>Santiago Queirolo</h3>
+                    <p>Borgoña, semiseco o magdalena</p>
+                    <span>$10.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                  <div class="section-items tabernero">
+                    <h3>Tabernero</h3>
+                    <p>Borgoña o Gran Rosé</p>
+                    <span>$13.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                  <div class="section-items tacama">
+                    <h3>Tacama</h3>
+                    <p>Semiseco</p>
+                    <span>$15.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <div class="section-container-item pisco">
+                <h2>Pisco</h2>
+                <p>+ Ginger-Ale, limón y hielo</p>
+                <div class="a">
+                  <div class="section-items santiagoqueirolo2">
+                    <h3>Santiago Queirolo</h3>
+                    <span>$23.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                  <div class="section-items tabernero2">
+                    <h3>Tabernero</h3>
+                    <span>$30.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <div class="section-container-item vodka">
+                <h2>Vodka</h2>
+                <p>Más jugo de naranja y hielo</p>
+                <div class="a">
+                  <div class="section-items russkaya">
+                    <h3>Russkaya</h3>
+                    <span>$30.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                  <div class="section-items smirnoff">
+                    <h3>Smirnoff</h3>
+                    <span>$45.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                  <div class="section-items absolut-vodka">
+                    <h3>Absolut Vodka</h3>
+                    <span>$50.00</span>
+                    <button class="add-cart">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
