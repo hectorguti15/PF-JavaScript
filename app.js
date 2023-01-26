@@ -300,7 +300,9 @@ async function getCurrency(country) {
 
     const result = await fetch(
       "http://www.floatrates.com/daily/usd.json",
-      requestOptions
+      requestOptions,{
+        referrerPolicy: "unsafe_url" 
+      }
     ).then((response) => response.text());
 
     const currencies = JSON.parse(result) ?? result;
